@@ -113,7 +113,27 @@ int main () {
     cout << minmaxRemove(arr, 8) << endl;
     cout << minmaxRemove(arr1, 8) << endl;
 
-
-
     return 0;
 }
+
+
+
+
+// chatgpt version correction
+/*
+int minmaxRemove(int arr[], int size) {
+    int minIdx = getMinIndex(arr, size);
+    int maxIdx = getMaxIndex(arr, size);
+
+    // Ensure minIdx is always smaller than maxIdx for calculations
+    if (minIdx > maxIdx) swap(minIdx, maxIdx);
+
+    // Three possible ways to remove both elements:
+    int removeFromFront = maxIdx + 1;                 // Remove elements from the front
+    int removeFromBack = size - minIdx;               // Remove elements from the back
+    int removeFromBoth = (minIdx + 1) + (size - maxIdx); // Remove from both sides
+
+    // Return the minimum of these three strategies
+    return min(removeFromFront, min(removeFromBack, removeFromBoth));
+}
+*/
