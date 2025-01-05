@@ -46,9 +46,72 @@ We can remove it with 1 deletion.
 #include <iostream>
 using namespace std;
 
+int getMin(int arr[], int size) {
+    int min = 0;
+    for(int i = 0; i < size; i++) {
+        if(arr[i] < arr[min]) {
+            min = i;
+        }
+    }
+    return min;
+}
 
+
+int getMax(int arr[], int size) {
+    int max = 0;
+    for(int i = 0; i < size; i++) {
+        if(arr[i] > arr[max]) {
+            max = i;
+        }
+    }
+    return max;
+}
+
+int minmaxRemove(int arr[], int size) {
+    int min = getMin(arr, size);
+    int max = getMax(arr, size);
+    
+    int ans1 = 0;
+    int ans2 = 0;
+    int ans3 = 0;
+
+
+
+    // delet from front
+    if(min > max) {
+        ans1 = min + 1;
+    } else {
+        ans1 = max + 1;
+    }
+
+    // from rare end
+    if(min > max) {
+        ans2 = size - max;
+    } else {
+        ans2 = size - min;
+    }
+
+    // from front and rare both
+    if(min > max) {
+        ans3 = (max + 1) + (size - min);
+    } else {
+        ans3 = (min + 1) + (size - max);
+    }
+
+    int arr1[3] = {ans1, ans2, ans3};
+    int result = getMin(arr1, 3);
+
+    return arr1[result];
+
+    
+}
 
 int main () {
+    
+    int arr[8] = {2,10,7,5,4,1,8,6};
+    int arr1[8] = {0,-4,19,1,8,-2,-3,5};
+    cout << minmaxRemove(arr, 8) << endl;
+    cout << minmaxRemove(arr1, 8) << endl;
 
 
 
