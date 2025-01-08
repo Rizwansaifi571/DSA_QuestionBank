@@ -35,6 +35,35 @@ Constraints:
 #include <vector>
 using namespace std;
 
+void rotate1(vector<int> &arr, int start, int end) {
+    while(start < end) {
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
+    }
+}
+
+void rotate(vector<int> &nums, int k) {
+    int n = nums.size();
+    
+    
+    k = k % n;
+
+    rotate1(nums, 0, n - 1);
+    rotate1(nums, 0, k - 1);
+    rotate1(nums, k, n - 1);
+}
+
+void print(vector<int> arr) {
+    for(int num : arr) {
+        cout << num << " ";
+    }
+    cout << endl;
+}
+
 int main() {
+    vector<int> arr = {1, 2, 3, 4, 5, 6, 7};
+    rotate(arr, 3);
+    print(arr);
     return 0;
 }
