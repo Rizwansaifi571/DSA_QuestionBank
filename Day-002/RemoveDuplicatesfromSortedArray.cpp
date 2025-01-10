@@ -48,8 +48,37 @@ nums is sorted in non-decreasing order.
 */
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
+
+int removeDuplicates(vector<int>& nums) {
+    int start = 0;
+    for(int i = 1; i < nums.size(); i++) {
+        if(nums[start] != nums[i]) {
+        start++;
+        nums[start] = nums[i];
+        }
+    }
+    return start + 1;
+} 
+
+
+
+void print(vector<int> nums) {
+    for(int num : nums) {
+        cout << num <<  " ";
+    }
+    cout << endl;
+}
+
+
 int main() {
+    vector<int> nums = {0,0,1,1,1,2,2,3,3,4};
+    vector<int> nums1 = {1, 1, 2, 3};
+    cout << removeDuplicates(nums) << endl;
+    cout << removeDuplicates(nums1) << endl;
+    print(nums);
+    print(nums1);
     return 0;
 }
