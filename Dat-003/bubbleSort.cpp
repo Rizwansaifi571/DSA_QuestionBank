@@ -5,10 +5,15 @@ using namespace std;
 
 void bubblesort(int arr[], int size) {
     for(int i = 0; i < size - 1; i++) {
-        for(int j = 0; j < size - i; j++) {
+        bool swapped = false;
+        for(int j = 0; j < size - i - 1; j++) {
             if(arr[j + 1] < arr[j]) {
                 swap(arr[j + 1], arr[j]);
+                swapped = true;
             }
+        }
+        if(!swapped) {
+            break;
         }
     }
 }
