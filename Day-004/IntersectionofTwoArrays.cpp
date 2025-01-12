@@ -66,4 +66,5 @@ int main() {
     print((intersection(nums1, nums2)));
 
     return 0;
+    
 }
