@@ -24,7 +24,5 @@ int main() {
     int arr[] = {5, 4, 3, 2, 1};
     bubblesort(arr, 5);
     printArray(arr, 5);
-    return 0;
-
 
 }
