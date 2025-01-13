@@ -32,9 +32,88 @@ The product of any subarray of nums is guaranteed to fit in a 32-bit integer.
 */
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int main() {
-    return 0;
+int negcount(vector<int> nums) {
+    int count = 0;
+    for(int num : nums) {
+        if(num < 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+bool zeropresent(vector<int> nums) {
+    for(int num : nums) {
+        if(num == 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+int maxProduct(vector<int>& nums) {
     
+    int product = 1;
+    int maxProduct = nums[0];
+    if(negcount(nums) % 2 == 0 && (!zeropresent(nums))) {
+        for(int num : nums) {
+            product *= num;
+        }
+        return product;
+    } 
+
+    else if(negcount(nums) % 2 == 0 && (zeropresent(nums))) {
+        for(int i = 0; i < nums.size(); i++) {
+            product *= nums[i];
+            if(maxProduct < product) {
+                maxProduct = product;
+            }
+            if(product == 0) {
+                product = 1;
+            }
+        }
+        return maxProduct;
+    }
+
+    else if(negcount(nums) % 2 != 0 && (!zeropresent(nums))) {
+        for(int i = 0; i < nums.size(); i++) {
+            product *= nums[i];
+            if(maxProduct < product) {
+                maxProduct = product;
+            }
+            if(i + 1 < nums.size()) {
+                if(product < 0 && nums[i + 1] > 0) {
+                    product = 1;
+                }
+            }
+        }
+        return maxProduct;
+    }
+
+    else if(negcount(nums) % 2 != 0 && (zeropresent(nums))) {
+        for(int i = 0; i < nums.size(); i++) {
+            product *= nums[i];
+            if(maxProduct < product) {
+                maxProduct = product;
+            }
+            if(i + 1 < nums.size()) {
+                if(product <= 0 && nums[i + 1] > 0) {
+                    product = 1;
+                }
+            }
+        }
+        return maxProduct;
+    }
+return -1;
+}
+
+int main() {
+    vector<int> arr1 = {2, -3, -2, 4};
+    cout << maxProduct(arr1) << endl;
+    return 0;
+
 }
