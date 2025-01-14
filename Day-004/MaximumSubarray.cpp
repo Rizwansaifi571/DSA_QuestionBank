@@ -53,15 +53,14 @@ int maxSubArray(vector<int>& nums) {
 }
 
 int main() {
-    // You can test your function here
     vector<int> nums1 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-    cout << "Maximum subarray sum: " << maxSubArray(nums1) << endl; // Output: 6
+    cout << "Maximum subarray sum: " << maxSubArray(nums1) << endl; 
     
     vector<int> nums2 = {1};
-    cout << "Maximum subarray sum: " << maxSubArray(nums2) << endl; // Output: 1
+    cout << "Maximum subarray sum: " << maxSubArray(nums2) << endl; 
     
     vector<int> nums3 = {5, 4, -1, 7, 8};
-    cout << "Maximum subarray sum: " << maxSubArray(nums3) << endl; // Output: 23
+    cout << "Maximum subarray sum: " << maxSubArray(nums3) << endl; 
     
     return 0;
 }
