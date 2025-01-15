@@ -35,7 +35,6 @@ The product of any subarray of nums is guaranteed to fit in a 32-bit integer.
 #include <vector>
 using namespace std;
 
-/*
 int negcount(vector<int> nums) {
     int count = 0;
     for(int num : nums) {
@@ -68,51 +67,112 @@ int maxProduct(vector<int>& nums) {
     } 
 
     else if(negcount(nums) % 2 == 0 && (zeropresent(nums))) {
+        int prefixProduct = 1;
+        int prefixMaxProduct = nums[0];
+        
+        int postfixProduct = 1;
+        int postfixMaxProduct = nums[0];
+
+        int result = 0;
+
         for(int i = 0; i < nums.size(); i++) {
-            product *= nums[i];
-            if(maxProduct < product) {
-                maxProduct = product;
+            prefixProduct *= nums[i];
+            if(prefixMaxProduct < prefixProduct) {
+                prefixMaxProduct = prefixProduct;
             }
-            if(product == 0) {
-                product = 1;
+            if(prefixProduct == 0) {
+                prefixProduct = 1;
             }
         }
-        return maxProduct;
+
+        for(int i = nums.size() - 1; i >= 0; i--) {
+            postfixProduct *= nums[i];
+            if(postfixMaxProduct < postfixProduct) {
+                postfixMaxProduct = postfixProduct;
+            }
+            if(postfixProduct == 0) {
+                postfixProduct = 1;
+            }
+        }
+
+        result = max(postfixMaxProduct, prefixMaxProduct);
+
+        return result;
+
     }
 
+
     else if(negcount(nums) % 2 != 0 && (!zeropresent(nums))) {
+        int prefixProduct = 1;
+        int prefixMaxProduct = nums[0];
+        
+        int postfixProduct = 1;
+        int postfixMaxProduct = nums[0];
+
+        int result = 0;
+
         for(int i = 0; i < nums.size(); i++) {
-            product *= nums[i];
-            if(maxProduct < product) {
-                maxProduct = product;
+            prefixProduct *= nums[i];
+            if(prefixMaxProduct < prefixProduct) {
+                prefixMaxProduct = prefixProduct;
             }
-            if(i + 1 < nums.size()) {
-                if(product < 0 && nums[i + 1] > 0) {
-                    product = 1;
-                }
+            if(prefixProduct == 0) {
+                prefixProduct = 1;
             }
         }
-        return maxProduct;
+
+        for(int i = nums.size() - 1; i >= 0; i--) {
+            postfixProduct *= nums[i];
+            if(postfixMaxProduct < postfixProduct) {
+                postfixMaxProduct = postfixProduct;
+            }
+            if(postfixProduct == 0) {
+                postfixProduct = 1;
+            }
+        }
+
+        result = max(postfixMaxProduct, prefixMaxProduct);
+
+        return result;
+
     }
 
     else if(negcount(nums) % 2 != 0 && (zeropresent(nums))) {
+        int prefixProduct = 1;
+        int prefixMaxProduct = nums[0];
+        
+        int postfixProduct = 1;
+        int postfixMaxProduct = nums[0];
+
+        int result = 0;
+
         for(int i = 0; i < nums.size(); i++) {
-            product *= nums[i];
-            if(maxProduct < product) {
-                maxProduct = product;
+            prefixProduct *= nums[i];
+            if(prefixMaxProduct < prefixProduct) {
+                prefixMaxProduct = prefixProduct;
             }
-            if(i + 1 < nums.size()) {
-                if(product <= 0 && nums[i + 1] > 0) {
-                    product = 1;
-                }
+            if(prefixProduct == 0) {
+                prefixProduct = 1;
             }
         }
-        return maxProduct;
-    }
-return -1;
-}
-*/
 
+        for(int i = nums.size() - 1; i >= 0; i--) {
+            postfixProduct *= nums[i];
+            if(postfixMaxProduct < postfixProduct) {
+                postfixMaxProduct = postfixProduct;
+            }
+            if(postfixProduct == 0) {
+                postfixProduct = 1;
+            }
+        }
+
+        result = max(postfixMaxProduct, prefixMaxProduct);
+
+        return result;
+
+    }
+    return -1;
+}
 
 
 int main() {
