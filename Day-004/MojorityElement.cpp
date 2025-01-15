@@ -31,7 +31,20 @@ n == nums.length
 */
 
 #include <iostream>
+#include <vector>
 using namespace std;
+
+int majorityElement(vector<int>& nums) {
+    int value = 0;
+    for(int i = 1; i < nums.size(); i++) {
+        if(nums[i - 1] == nums[i]) {
+            value++;
+        }
+        else {
+            value--;
+        }
+    }
+}
 
 int main() {
     return 0;
