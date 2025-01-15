@@ -35,6 +35,7 @@ The product of any subarray of nums is guaranteed to fit in a 32-bit integer.
 #include <vector>
 using namespace std;
 
+/*
 int negcount(vector<int> nums) {
     int count = 0;
     for(int num : nums) {
@@ -110,6 +111,9 @@ int maxProduct(vector<int>& nums) {
     }
 return -1;
 }
+*/
+
+
 
 int main() {
     vector<int> arr1 = {2, -3, -2, 4};
