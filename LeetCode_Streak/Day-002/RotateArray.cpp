@@ -38,3 +38,37 @@ Follow up:
 Try to come up with as many solutions as you can. There are at least three different ways to solve this problem.
 Could you do it in-place with O(1) extra space?
  */
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+/*
+void rotate(vector<int> &nums, int k) {
+    vector <int> temp(nums.size());
+
+    for(int i = 0; i < nums.size(); i++) {
+        temp[(i + k) % nums.size()] = nums[i];
+    }
+
+    // copying temp into nums vector
+    nums = temp;
+}
+*/
+
+void rotate1(vector<int> &arr, int start, int end) {
+    while(start < end) {
+        swap(arr[start], arr[end]);
+        start++;
+        end--;
+    }
+}
+
+void rotate(vector<int> &nums, int k) {
+    int n = nums.size();
+    k = k % n;
+    rotate1(nums, 0, n - 1);
+    rotate1(nums, 0, k - 1);
+    rotate1(nums, k, n - 1);
+}
