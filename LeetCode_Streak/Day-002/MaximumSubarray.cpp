@@ -40,3 +40,20 @@ Follow up: If you have figured out the O(n) solution, try coding another solutio
 #include <vector>
 #include <unordered_map>
 using namespace std;
+
+
+int maxSubArray(vector<int>& nums) {
+    int sum = 0;
+    int maxSum = nums[0];
+
+    for(int num : nums) {
+        sum += num;
+        if(maxSum < sum) 
+            maxSum = sum;
+
+        if(sum < 0)
+            sum = 0; 
+
+    }
+    return maxSum;
+}
