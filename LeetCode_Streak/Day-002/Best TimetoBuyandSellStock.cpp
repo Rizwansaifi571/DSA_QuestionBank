@@ -30,3 +30,20 @@ Constraints:
 1 <= prices.length <= 105
 0 <= prices[i] <= 104
 */
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <climits>
+using namespace std;
+
+int maxProfit(vector<int>& prices) {
+    int minPrice = INT_MAX;
+    int maxProfit = 0;
+
+    for(int num : prices) {
+        minPrice = min(num, minPrice);
+        maxProfit = max(num - minPrice, maxProfit);
+    }
+return maxProfit;
+}
