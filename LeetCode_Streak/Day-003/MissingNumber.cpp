@@ -55,3 +55,34 @@ All the numbers of nums are unique.
 
 Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?
 */
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+/*
+int missingNumber(vector<int>& nums) {
+    sort(nums.begin(), nums.end());
+    if(nums.size() <= 2 && nums[0] != 0) return 0;
+    for(int i = 0; i < nums.size(); i++) {
+        if(nums[i] != i ) {
+            return i;
+        }
+    }
+    return nums[nums.size() - 1] + 1;;
+}
+*/
+
+int missingNumber(vector<int>& nums) {
+    int n = nums.size();
+    int total = 0;
+    for(int i = 0; i <= n; i++) {
+        total += i;
+    }
+
+    for(int i = 0; i < n; i++) {
+        total -= nums[i];
+    }
+    return total;
+}
