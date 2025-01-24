@@ -27,3 +27,21 @@ nums[i] is either 0 or 1.
 
 */
 
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+
+int findMaxConsecutiveOnes(vector<int>& nums) {
+    int count = 0;
+    int maxcount = 0;
+    for(int num : nums) {
+        if(num == 1) {
+            count++;
+            maxcount = max(maxcount, count);
+        }
+        else count = 0;
+    }
+    return maxcount;
+}
