@@ -38,3 +38,34 @@ Constraints:
 Each element in the array appears twice except for one element which appears only once.
 */
 
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+
+/*
+int singleNumber(vector<int>& nums) {
+    unordered_map<int, int> mymap;
+
+    for(int num : nums) {
+        mymap[num]++;
+    }   
+
+    for(auto &pair : mymap) {
+        if(pair.second == 1) {
+            return pair.first;
+        }
+    }
+    return -1;
+}
+*/
+
+int singleNumber(vector<int>& nums) {
+    int result = 0;
+
+    for(int num : nums) {
+        result ^= num;
+    }
+    return result;
+}
