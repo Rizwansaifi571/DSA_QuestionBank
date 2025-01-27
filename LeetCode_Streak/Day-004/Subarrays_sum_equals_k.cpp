@@ -27,3 +27,24 @@ Constraints:
 -107 <= k <= 107
 */
 
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
+
+int subarraySum(vector<int>& nums, int k) {
+        unordered_map<int, int> prefixSumCount;
+        prefixSumCount[0] = 1; 
+        
+        int subarrayCount = 0, prefixSum = 0;
+
+        for(int num : nums) {
+            prefixSum += num; 
+
+            if(prefixSumCount.find(prefixSum - k) != prefixSumCount.end()) {
+                subarrayCount += prefixSumCount[prefixSum - k];
+            }
+            prefixSumCount[prefixSum]++;
+        }
+        return subarrayCount;
+    }
