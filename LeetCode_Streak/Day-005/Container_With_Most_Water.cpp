@@ -32,3 +32,25 @@ n == height.length
 0 <= height[i] <= 104
 */
 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int maxArea(vector<int>& height) {
+        int start = 0;
+        int end = height.size() - 1;
+        int result = 0;
+
+        while(start < end) {
+            int gap = end - start;
+            int mini = min( height[start], height[end]);
+            result = max(result, (mini * gap));
+            if(height[start] < height[end]) {
+                start++;
+            }
+            else {
+                end--;
+            }
+        }
+        return result;
+    }
