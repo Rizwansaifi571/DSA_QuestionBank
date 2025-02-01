@@ -1,33 +1,75 @@
-# 🚀 DartMastery
 
-Welcome to DartMastery, your ultimate guide to mastering the Dart programming language! 🎯 Whether you're a seasoned developer or just starting out, this repository is your go-to resource for learning Dart and honing your skills. 📚
+# 🚀 DSA Question Bank 📚  
 
-## What is DartMastery?
+📌 *A personal collection of solved DSA problems from LeetCode, GeeksforGeeks, and other platforms.*  
 
-DartMastery is a comprehensive collection of tutorials, exercises, and projects designed to take you from a beginner to an expert in Dart programming. 🌟 With our carefully curated content, you'll gain the knowledge and confidence to build amazing apps and software using Dart. 💻
+🔗 **Explore Topics:**  
+🔹 [Arrays](#arrays) | 🔹 [Linked Lists](#linked-lists) | 🔹 [Stacks & Queues](#stacks-and-queues) | 🔹 [Trees](#trees) | 🔹 [Graphs](#graphs) | 🔹 [Dynamic Programming](#dynamic-programming) | 🔹 [Sorting & Searching](#sorting-and-searching)  
 
-## Why DartMastery?
+---
 
-- 🚀 **Comprehensive Learning:** Dive deep into Dart with step-by-step tutorials and hands-on exercises.
-- 📚 **Extensive Resources:** Explore a wide range of topics, from basic syntax to advanced concepts.
-- 💡 **Real-World Projects:** Apply your skills to real-world projects and enhance your portfolio.
-- 🌐 **Community Support:** Join a vibrant community of learners, share insights, and collaborate on projects.
+## 📂 Repository Overview  
 
-## Get Started
+This repository contains my solutions to various **Data Structures & Algorithms (DSA)** problems for **practice and interview preparation.** Each problem is categorized and includes an optimized solution with explanations.  
 
-Ready to embark on your Dart journey? Here's how to get started:
+✨ **Features:**  
+✅ Well-structured categorization 📁  
+✅ Solutions from multiple platforms 🌍  
+✅ Step-by-step explanations 📝  
+✅ Optimized approaches 🔥  
 
-1. **Explore Tutorials:** Browse through our collection of tutorials to understand Dart concepts.
-2. **Complete Exercises:** Put your knowledge to the test with interactive exercises.
-3. **Contribute:** Help improve DartMastery by contributing your own tutorials or projects.
-4. **Connect:** Join our community on Discord to connect with fellow learners and mentors.
+---
 
-## Contributing
+## 📌 Categories  
 
-We welcome contributions from the community! Whether it's fixing a typo, adding a new tutorial, or improving existing content, your contributions are valuable. Check out our [Contribution Guidelines](CONTRIBUTING.md) to get started.
+### 🔹 Arrays  
+📌 **[Problem 1](link-to-problem-1)** – Description of the problem 📝  
+📌 **[Problem 2](link-to-problem-2)** – Description of the problem 📝  
 
-## Spread the Word
+### 🔹 Linked Lists  
+📌 **[Problem 3](link-to-problem-3)** – Description of the problem 📝  
+📌 **[Problem 4](link-to-problem-4)** – Description of the problem 📝  
 
-Enjoying DartMastery? Help us spread the word! Share this repository with your friends, colleagues, and anyone interested in learning Dart. Let's build a thriving community of Dart enthusiasts together! 🌟
+### 🔹 Stacks & Queues  
+📌 **[Problem 5](link-to-problem-5)** – Description of the problem 📝  
+📌 **[Problem 6](link-to-problem-6)** – Description of the problem 📝  
 
-Happy Coding! 🚀
+### 🔹 Trees  
+📌 **[Problem 7](link-to-problem-7)** – Description of the problem 📝  
+📌 **[Problem 8](link-to-problem-8)** – Description of the problem 📝  
+
+### 🔹 Graphs  
+📌 **[Problem 9](link-to-problem-9)** – Description of the problem 📝  
+📌 **[Problem 10](link-to-problem-10)** – Description of the problem 📝  
+
+### 🔹 Dynamic Programming  
+📌 **[Problem 11](link-to-problem-11)** – Description of the problem 📝  
+📌 **[Problem 12](link-to-problem-12)** – Description of the problem 📝  
+
+### 🔹 Sorting & Searching  
+📌 **[Problem 13](link-to-problem-13)** – Description of the problem 📝  
+📌 **[Problem 14](link-to-problem-14)** – Description of the problem 📝  
+
+---
+
+## 🛠️ Contributing  
+
+🔹 Feel free to contribute by adding new solutions or optimizing existing ones!  
+🔹 Ensure each solution is **well-documented** and properly formatted.  
+🔹 Follow the repository structure and categorize problems accordingly.  
+
+💡 **Let's make this a great resource for DSA learning together!**  
+
+---
+
+## 📜 License  
+This project is for personal learning and practice. Feel free to use and share! 🚀  
+
+---
+
+📌 **Star ⭐ this repository if you find it useful!**  
+💬 **Feedback & suggestions are always welcome!** 😊  
+
+---
+
+This README now looks **more structured, engaging, and visually appealing**! Let me know if you’d like further enhancements! 🚀
