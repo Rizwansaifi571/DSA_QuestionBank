@@ -33,3 +33,16 @@ Constraints:
 1 <= arr[i] <= 105
 */
 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> replaceElements(vector<int>& arr) {
+        vector<int> result(arr.size());
+        int maxi = -1;
+        for(int i = arr.size() - 1; i >= 0; i--) {
+            result[i] = maxi;
+            maxi = max(maxi, arr[i]);
+        }
+        return result;
+    }
