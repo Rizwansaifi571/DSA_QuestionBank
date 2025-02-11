@@ -53,3 +53,24 @@ nums is sorted in non-decreasing order.
 #include <iostream>
 #include <vector>
 using namespace std;
+
+int removeDuplicates(vector<int>& nums) {
+        if(nums.empty()) return 0;
+        int index = 0;
+        int count = 1;
+        for(int i = 1; i < nums.size(); i++) {
+            if(nums[index] == nums[i]) {
+                if(count < 2) {
+                    index++;
+                    nums[index] = nums[i];
+                    count++;
+                }
+            }
+            else {
+                count = 1;
+                index++;
+                nums[index] = nums[i];
+            }
+        }
+        return index + 1;
+    }
