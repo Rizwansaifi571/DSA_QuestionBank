@@ -50,3 +50,6 @@ nums is sorted in non-decreasing order.
 
 */
 
+#include <iostream>
+#include <vector>
+using namespace std;
