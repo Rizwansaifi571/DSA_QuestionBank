@@ -29,3 +29,29 @@ The product of any subarray of nums is guaranteed to fit in a 32-bit integer.
 
 */
 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int maxProduct(vector<int>& nums) {
+        int product = 1;
+        int premaxi = nums[0];
+        for(int i = 0; i < nums.size(); i++) {
+            product *= nums[i];
+            premaxi = max(premaxi, product);
+            if(product == 0) {
+                product = 1;
+            }
+        }
+        
+        int postmaxi = nums[nums.size() - 1];
+        product = 1;
+        for(int i = nums.size() - 1; i >= 0; i--) {
+            product *= nums[i];
+            postmaxi = max(postmaxi, product);
+            if(product == 0) {
+                product = 1;
+            }
+        }
+        return max(postmaxi, premaxi);
+    }
