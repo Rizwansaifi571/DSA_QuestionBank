@@ -29,3 +29,31 @@ n == matrix.length == matrix[i].length
 
 */
 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+void reverse(vector<int>& row) {
+    int start = 0;
+    int end = row.size() - 1;
+    while(start < end) {
+        swap(row[start], row[end]);
+        start++;
+        end--;
+    }
+}
+
+void rotate(vector<vector<int>>& matrix) {
+    int n = matrix.size();
+
+    // step 1 : transpose matrix
+    for(int i = 0; i < n; i++) {
+        for(int j = i + 1; j < n; j++) {
+            swap(matrix[i][j], matrix[j][i]);
+        }
+    }
+
+    for(int i = 0; i < n; i++) {
+        reverse(matrix[i]);
+    }
