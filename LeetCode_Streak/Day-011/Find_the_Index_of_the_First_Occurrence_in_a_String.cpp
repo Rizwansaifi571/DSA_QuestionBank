@@ -27,3 +27,21 @@ haystack and needle consist of only lowercase English characters.
 
 */
 
+#include <iostream>
+using namespace std;
+
+int strStr(string haystack, string needle) {
+        if(needle.empty()) return -1;
+        
+        int index = 0;
+        int l1 = haystack.length();
+        int l2 = needle.length();
+        if(l2 > l1) return -1;
+        
+        for(int i = 0; i <= l1 - l2; i++) {
+            if(haystack.substr(i, l2) == needle) {
+                return i;
+            } 
+        }
+        return -1;
+    }
