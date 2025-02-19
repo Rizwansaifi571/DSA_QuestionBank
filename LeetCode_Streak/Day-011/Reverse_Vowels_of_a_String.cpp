@@ -34,3 +34,21 @@ s consist of printable ASCII characters.
 
 */
 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+string reverseVowels(string &s) {
+        vector<int> vowel;
+        for(int i = 0; i < s.length(); i++) {
+            if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' ||
+            s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U') {
+                vowel.push_back(i);
+            }
+        }
+
+        for(int i = 0; i < vowel.size() / 2; i++) {
+            swap(s[vowel[i]], s[vowel[vowel.size() - 1 - i]]);
+        }
+        return s;
+    }
