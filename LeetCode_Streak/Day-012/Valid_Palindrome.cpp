@@ -34,3 +34,43 @@ s consists only of printable ASCII characters.
 
 */
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+void valid(string& s) {
+        int index = 0;
+        for(char c : s) {
+            if((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A') || (c <= '9' && c >= '0')) {
+                s[index] = c;
+                index++;
+            }
+        }
+        s.resize(index);
+    }
+
+
+    void toLower(string& s) {
+        for(char &c : s) {
+            if(c <= 'Z' && c >= 'A') {
+                c = c - 'A' + 'a';
+            }
+        }
+    }
+
+    bool isPalindrome(string s) {
+        valid(s);
+        toLower(s);
+        int start = 0;
+        int end = s.length() - 1;
+
+        while(start < end) {
+            if(s[start] != s[end]) {
+                return false;
+            }
+            else {
+                start++;
+                end--;
+            }
+        }
+        return true;
