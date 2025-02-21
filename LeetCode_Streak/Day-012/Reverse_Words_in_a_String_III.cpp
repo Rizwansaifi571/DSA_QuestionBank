@@ -27,3 +27,25 @@ All the words in s are separated by a single space.
 
 */
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+void reverse(string& s, int start, int end) {
+        while(start < end) {
+            swap(s[start], s[end]);
+            start++;
+            end--;
+        }
+    }
+
+    string reverseWords(string& s) {
+        int index = 0;
+        for(int i = 0; i < s.length(); i++) {
+            if(s[i] == ' ') {
+                reverse(s, index, i - 1);
+                index = i + 1;
+            }
+        }
+        reverse(s, index, s.length() - 1);
+        return s;
