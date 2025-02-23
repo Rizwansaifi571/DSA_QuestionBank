@@ -36,3 +36,24 @@ Follow up: Can you solve it in O(n) time and O(1) space?
 
 */
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool backspaceCompare(string s, string t) {
+        return check(s) == check(t);
+    }
+
+    string check(string str) {
+        string result;
+
+        for(char ch : str) {
+            if(ch == '#') {
+                if(!result.empty())
+                    result.pop_back();
+            }
+            else {
+                result.push_back(ch);
+            }
+        }
+        return result;
