@@ -30,3 +30,17 @@ Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 
 
 */
 
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool isSubsequence(string s, string t) {
+        int index = 0;
+        for(int i = 0; i < t.length(); i++) {
+            if(s[index] == t[i]) {
+                index++;
+            }
+        }
+
+        if(index == s.length()) return true;
+        return false;
