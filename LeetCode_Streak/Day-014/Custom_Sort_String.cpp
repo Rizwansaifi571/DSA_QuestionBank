@@ -42,3 +42,29 @@ All the characters of order are unique.
 
 */
 
+#include <iostream>
+#include <string>
+#include <unordered_map>
+#include <auto>
+using namespace std;
+
+string customSortString(string order, string s) {
+        unordered_map<char, int> freq;
+        string result;
+
+        for(char c : s) {
+            freq[c]++;
+        }
+
+        for(char c : order) {
+            if(freq.count(c)) {
+                result.append(freq[c], c);
+                freq.erase(c);
+            }
+        }
+
+        for(auto& [ch, count] : freq) {
+            result.append(count, ch);
+        }
+
+        return result;
