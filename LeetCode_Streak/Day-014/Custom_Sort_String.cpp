@@ -45,7 +45,7 @@ All the characters of order are unique.
 #include <iostream>
 #include <string>
 #include <unordered_map>
-#include <auto>
+
 using namespace std;
 
 string customSortString(string order, string s) {
@@ -63,8 +63,8 @@ string customSortString(string order, string s) {
             }
         }
 
-        for(auto& [ch, count] : freq) {
-            result.append(count, ch);
+        for (auto it = freq.begin(); it != freq.end(); ++it) {
+            result.append(it->second, it->first);
         }
 
         return result;
