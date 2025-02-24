@@ -49,3 +49,27 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 
 */
 
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int romanToInt(string s) {
+        unordered_map<char, int> mymap = {
+            {'I', 1}, {'V', 5}, {'X', 10}, {'L', 50}, {'C', 100}, {'D', 500}, 
+            {'M', 1000}
+        };
+        
+        int sum = mymap[s[0]];
+        for(int i = 1; i < s.length(); i++) {
+            int temp = mymap[s[i - 1]];
+            if(mymap[s[i]] <= temp) {
+                sum += mymap[s[i]];
+            }
+            else {
+                sum -= temp;
+                sum += mymap[s[i]] - temp;
+
+
+            }
+        }
+        return sum;
