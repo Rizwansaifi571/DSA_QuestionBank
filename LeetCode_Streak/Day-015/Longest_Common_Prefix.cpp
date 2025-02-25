@@ -28,3 +28,30 @@ strs[i] consists of only lowercase English letters if it is non-empty.
 
 */
 
+#include <iostream>
+#include <vector>
+#include <string>
+#include <climits>
+using namespace std;
+
+string longestCommonPrefix(vector<string>& strs) {
+        int index = 0;
+        string result;
+
+        int mini = INT_MAX;
+        for(int i = 0; i < strs.size(); i++) {
+            int len = strs[i].length();
+            mini = min(mini, len); 
+        }
+
+        while(mini > index) {
+            char value = strs[0][index];
+            for(int i = 0; i < strs.size(); i++) {
+                if(value != strs[i][index]) {
+                    return result;
+                }
+            }
+            result.push_back(strs[0][index]);
+            index++;
+        }
+        return result;
